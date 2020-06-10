@@ -28,8 +28,8 @@ var stepX = 3;
  */
 function horizontalAnimationRoundTrip() {
 	requestAnimationFrame(horizontalAnimationRoundTrip);
-    c.clearRect(0, 0, innerWidth, innerHeight);
-    c.beginPath();
+	c.clearRect(0, 0, innerWidth, innerHeight);
+	c.beginPath();
 	c.arc(x, 200, r, 0, Math.PI * 2, false);
 	c.strokeStyle = "purple";
 	c.stroke();
