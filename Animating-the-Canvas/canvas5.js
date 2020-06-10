@@ -90,7 +90,7 @@ for (var i = 0; i < totalCircle; i++) {
 
 function animate() {
 	requestAnimationFrame(animate);
-	c.clearRect(0, 0, iWidth, iWidth);
+	c.clearRect(0, 0, iWidth, iHeight);
 	//每次重绘画面时都会执行已创建的每个Circle对象的update方法，对每个圆圈进行位置更新
 	for (var i = 0; i < totalCircle; i++) {
 		circleArray[i].update();
