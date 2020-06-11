@@ -13,15 +13,18 @@ canvas.height = iHeight;
 var c = canvas.getContext("2d");
 
 /**
- * 圆圈对象
- * @param {number} x 圆心X坐标
- * @param {number} y 圆心Y坐标
- * @param {number} sx 横向运动速度，包含速率及方向
- * @param {number} sy 纵向运动速度，包含速率及方向
- * @param {number} r 半径
- * @param {string} color 填充颜色
+ * 圆圈类型
  */
 class Circle {
+	/**
+	 * 构造圆圈对象
+	 * @param {number} x 圆心X坐标
+	 * @param {number} y 圆心Y坐标
+	 * @param {number} sx 横向运动速度，包含速率及方向
+	 * @param {number} sy 纵向运动速度，包含速率及方向
+	 * @param {number} r 半径
+	 * @param {string} color 填充颜色
+	 */
 	constructor(x, y, sx, sy, r, color) {
 		/**
 		 * 圆心横坐标
