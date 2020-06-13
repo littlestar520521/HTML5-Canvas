@@ -37,14 +37,6 @@ c.fillStyle = "orange";
  */
 var radius = 30;
 
-/**
- * 圆圈类型
- * @param {number} x 圆心X坐标
- * @param {number} y 圆心Y坐标
- * @param {number} sx 横向运动速度，包含速率及方向
- * @param {number} sy 纵向运动速度，包含速率及方向
- * @param {number} r 半径
- */
 class Circle {
 	/**
 	 * 构造圆圈对象
@@ -75,45 +67,45 @@ class Circle {
 		 * 圆圈半径
 		 */
 		this.r = r;
-		/**
-		 * 绘制函数
-		 */
-		this.draw = function () {
-			c.beginPath();
-			c.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
-			c.stroke();
-			c.fill();
-		};
-		/**
-		 * 更新位置函数，包含边界检测，碰到边界自动返回
-		 */
-		this.update = function () {
-			if (this.x + this.r > iWidth || this.x - this.r < 0) {
-				this.sx = -this.sx;
-			}
-			if (this.y + this.r > iHeight || this.y - this.r < 0) {
-				this.sy = -this.sy;
-			}
-			this.x += this.sx;
-			this.y += this.sy;
+	}
+	/**
+	 * 绘制函数
+	 */
+	draw() {
+		c.beginPath();
+		c.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+		c.stroke();
+		c.fill();
+	}
+	/**
+	 * 更新位置函数，包含边界检测，碰到边界自动返回
+	 */
+	update() {
+		if (this.x + this.r > iWidth || this.x - this.r < 0) {
+			this.sx = -this.sx;
+		}
+		if (this.y + this.r > iHeight || this.y - this.r < 0) {
+			this.sy = -this.sy;
+		}
+		this.x += this.sx;
+		this.y += this.sy;
 
-			//跟随鼠标移动变换大小：当圆心离鼠标指针横向纵向距离均小于50时，半径会增大；反之，半径会缩小
-			if (
-				Math.abs(mouse.y - this.y) < 50 &&
-				Math.abs(mouse.x - this.x) < 50
-			) {
-				//如果半径已经超过或等于40则不再继续增大
-				if (this.r < 40) {
-					this.r += 1;
-				}
-			} else {
-				//如果半径已经小于或等于2则不再继续缩小
-				if (this.r > 2) {
-					this.r -= 1;
-				}
+		//跟随鼠标移动变换大小：当圆心离鼠标指针横向纵向距离均小于50时，半径会增大；反之，半径会缩小
+		if (
+			Math.abs(mouse.y - this.y) < 50 &&
+			Math.abs(mouse.x - this.x) < 50
+		) {
+			//如果半径已经超过或等于40则不再继续增大
+			if (this.r < 40) {
+				this.r += 1;
 			}
-			this.draw();
-		};
+		} else {
+			//如果半径已经小于或等于2则不再继续缩小
+			if (this.r > 2) {
+				this.r -= 1;
+			}
+		}
+		this.draw();
 	}
 }
 
