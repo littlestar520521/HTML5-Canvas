@@ -88,11 +88,11 @@ var circleArray = [];
 const totalCircle = 10;
 
 for (var i = 0; i < totalCircle; i++) {
+	var radius = Math.floor(Math.random() * 50) + 10;
 	var x = Math.random() * (iWidth - radius * 2) + radius;
 	var y = Math.random() * (iHeight - radius * 2) + radius;
 	var sx = generateStep();
-	var sy = generateStep();
-	var radius = Math.floor(Math.random() * 50) + 10;
+	var sy = generateStep();	
 	var color = generateColor();
 	circleArray.push(new Circle(x, y, sx, sy, radius, color));
 }
