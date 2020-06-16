@@ -6,33 +6,14 @@ var c = canvas.getContext("2d");
 /**
  * 颜色预设方案，具体配色请点击链接http://www.peise.net/2011/0714/1737.html
  */
-const CIRCLE_COLORS = ["#5FD9CD", "#EAF786", "#FFB5A1", "#B8FFB8", "#B8F4FF"];
-
-/**
- * 鼠标指针位置
- */
-var mouseLocation = {
-	x: 0,
-	y: 0,
-};
-
-//画布绑定鼠标移动事件
-canvas.addEventListener("mousemove", function (e) {
-	mouseLocation.x = e.clientX;
-	mouseLocation.y = e.clientY;
-});
-//窗口绑定尺寸缩放事件
-window.addEventListener("resize", function () {
-	canvas.width = innerWidth;
-	canvas.height = innerHeight;
-});
+const BALL_COLORS = ["#5FD9CD", "#EAF786", "#FFB5A1", "#B8FFB8", "#B8F4FF"];
 
 /**
  * Ball类
  */
 class Ball {
 	/**
-	 * 创建Circle对象
+	 * 创建ball对象
 	 * @param {number} x 圆心X坐标
 	 * @param {number} y 圆心Y坐标
 	 * @param {number} velocityY 纵向运动速度
@@ -82,7 +63,7 @@ class Ball {
 	}
 }
 
-var ball = new Ball(innerWidth / 2, innerHeight / 2, 1, 30, CIRCLE_COLORS[0]);
+var ball = new Ball(innerWidth / 2, innerHeight / 2, 1, 30, BALL_COLORS[0]);
 
 function animate() {
 	requestAnimationFrame(animate);
