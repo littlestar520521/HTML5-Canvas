@@ -7,3 +7,4 @@ YouTube博主Chris Courses的Canvas教学频道 <https://www.youtube.com/playlis
 * *`Drawing-on-the-Canvas`* Canvas绘图基础函数
 * *`Animating-the-Canvas`* 使Canvas图形动起来
 * *`Interacting-with-the-Canvas`* 与Canvas图形交互
+* *`How-to-Code-Gravity`* 编写代码实现重力效果
